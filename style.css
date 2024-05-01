@@ -19,7 +19,7 @@ body{
 
 .container{
     position: relative;
-    width: 400px;
+    width: 600px;
     height: 100px;
     background: rgba(255,255,255,.1);
     backdrop-filter: blur(20px);
@@ -32,7 +32,7 @@ body{
 
 .search-box{
     position: relative;
-    width: 100%;
+    width: 75%;
     height: 55px;
     background: slateblue;
     display:flex;
@@ -129,7 +129,7 @@ body{
 }
 
 .weather-details{
-    position: absolute;
+    position: relative;
     bottom: 40px;
     left: 0;
     width: 100%;
@@ -151,13 +151,78 @@ body{
 }
 
 .weather-details .humidity{
-    padding-left: 20px;
+    padding-left: 10px;
     justify-content: flex-start;
 }
 
 .weather-details .wind{
     padding-left: 20px;
     justify-content: flex-end;
+}
+
+
+.search-box {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.search-box input[type="text"],
+.search-box button {
+    margin-right: 10px;
+}
+
+.hamburger-menu {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.hamburger-menu i{
+    position: absolute;
+    font-size: 50px;
+    left: -50px;
+    color: #fff;
+}
+
+.login-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    width: 200px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1001; 
+}
+
+.login-menu form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-menu input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.login-menu button {
+    padding: 8px;
+    border: none;
+    border-radius: 3px;
+    background-color: slateblue;
+    color: white;
+    cursor: pointer;
+}
+
+.hamburger-menu.clicked .login-menu {
+    display: block;
 }
 
 .weather-details i {
@@ -193,4 +258,28 @@ body{
     font-size: 22px;
     font-weight: 500;
     margin-top: 12px;
+}
+
+.history-table.active{
+    visibility: visible;
+}
+
+.history-table {
+    visibility: hidden;
+    padding-top: 15px;
+    padding-left: 15px; 
+    margin: 10px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.history-table th,
+.history-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.history-table th {
+    background-color: #f2f2f2;
 }
